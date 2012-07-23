@@ -17,3 +17,5 @@ heroku logs
 
 rails generate rspec:install
 rails generate controller StaticPages home help --no-test-framework
+
+rails generate integration_test static_pages
