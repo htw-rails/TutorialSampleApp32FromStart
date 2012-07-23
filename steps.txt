@@ -19,3 +19,15 @@ rails generate rspec:install
 rails generate controller StaticPages home help --no-test-framework
 
 rails generate integration_test static_pages
+
+
+Show in Class: Adding a Page Test First
+=======================================
+http://ruby.railstutorial.org/chapters/static-pages#sec:adding_a_page
+start with this commit: 
+
+commit 323d1b74c926d43ab1424818e0b5799634d67f41
+Author: B Kleinen <kleinen@infrastructure.de>
+Date:   Mon Jul 23 22:33:02 2012 +0200
+
+    help and home
