@@ -1,0 +1,19 @@
+Chapter 3
+=========
+rails new sample_app --skip-test-unit
+
+copy gemfile from http://ruby.railstutorial.org/chapters/static-pages#top
+
+bundle install --without production
+rails generate rspec:install
+
+github?
+
+heroku create --stack cedar
+git push heroku
+
+heroku logs
+
+
+rails generate rspec:install
+rails generate controller StaticPages home help --no-test-framework
