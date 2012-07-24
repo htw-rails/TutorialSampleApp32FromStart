@@ -26,6 +26,9 @@ group :test do
   gem 'spork'
 end
 
+# not in tutorial
+gem 'simplecov', :require => false, :group => :test
+
 group :production do
   gem 'pg'
 end
