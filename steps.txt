@@ -31,3 +31,16 @@ Author: B Kleinen <kleinen@infrastructure.de>
 Date:   Mon Jul 23 22:33:02 2012 +0200
 
     help and home
+
+run without bundle exec
+======================
+rvm get head && rvm reload
+chmod +x $rvm_path/hooks/after_cd_bundler
+bundle install --without production --binstubs=./bundler_stubs
+bundle install --binstubs=./bundler_stubs
+
+Spork
+
+start with spork
+then run tests with --drb
+time bundle exec rspec spec/requests/static_pages_spec.rb --drb
