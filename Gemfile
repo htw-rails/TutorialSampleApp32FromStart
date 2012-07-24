@@ -6,13 +6,13 @@ group :development, :test do
   gem 'sqlite3'
   gem 'rspec-rails'
   gem 'guard-rspec'
-  # metric_fu with various "workarounds"
-#  gem 'metric_fu'
-#  gem 'rcov', '0.9.11'
-  gem 'fattr'
-  gem 'arrayfields'
-  gem 'metrical', :require => false # supposedly should take care of dependencies, but doesn't
-  gem 'map'
+  # instead of not working metric_fu, without coverage
+  gem 'metrical', :require => false 
+  gem 'fattr', :require => false 
+  gem 'arrayfields', :require => false 
+  gem 'map', :require => false 
+  # also, manually include this pull request:
+  # https://github.com/aselder/roodi/commit/a01982699867f8d994a2c1b5cd9fd865364f795f
   #simplecov
   gem 'simplecov', :require => false
 end
