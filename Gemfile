@@ -1,7 +1,9 @@
 source 'https://rubygems.org'
 
 gem 'rails'
-
+group :development do
+  gem 'growl'
+end
 group :development, :test do
   gem 'sqlite3'
   gem 'rspec-rails'
