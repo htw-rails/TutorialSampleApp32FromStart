@@ -3,12 +3,14 @@ source 'https://rubygems.org'
 gem 'rails'
 gem 'bootstrap-sass'
 
+
 group :development do
   gem 'growl'
 end
 group :development, :test do
   gem 'sqlite3'
   gem 'rspec-rails'
+  gem 'launchy'
   gem 'guard-rspec'
   # instead of not working metric_fu, without coverage
   gem 'metrical', :require => false 
@@ -33,6 +35,7 @@ gem 'jquery-rails'
 
 group :test do
   gem 'capybara'
+ # gem 'launchy' save_and_open_page does not work, #todo
   gem 'rb-fsevent', :require => false
   gem 'growl'
   gem 'guard-spork'
