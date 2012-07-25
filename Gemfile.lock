@@ -245,7 +245,7 @@ DEPENDENCIES
   map
   metrical
   pg
-  rails
+  rails (= 3.2.6)
   rb-fsevent
   rspec-rails
   sass-rails
