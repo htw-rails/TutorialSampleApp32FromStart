@@ -1,5 +1,9 @@
 # A sample Guardfile
 # More info at https://github.com/guard/guard#readme
+
+#http://stackoverflow.com/questions/9711239/error-with-running-guard-process-cant-find-singularize-method
+require 'active_support/core_ext'
+
 guard 'spork', :cucumber_env => { 'RAILS_ENV' => 'test' }, :rspec_env => { 'RAILS_ENV' => 'test' } do
   watch('config/application.rb')
   watch('config/environment.rb')

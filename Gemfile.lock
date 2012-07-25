@@ -33,6 +33,7 @@ GEM
     arel (3.0.2)
     arrayfields (4.7.4)
     awesome_print (1.0.2)
+    bootstrap-sass (2.0.4.0)
     builder (3.0.0)
     capybara (1.1.2)
       mime-types (>= 1.16)
@@ -228,6 +229,7 @@ PLATFORMS
 
 DEPENDENCIES
   arrayfields
+  bootstrap-sass
   capybara
   coffee-rails
   fattr
