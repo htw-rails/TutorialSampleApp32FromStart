@@ -1,7 +1,9 @@
 require 'spec_helper'
 
 describe "Authentication" do
-
+#  it "CONTINUE HERE" do
+#    'Listing 9.27. A test for the "Users" link URI.'.should be ""
+#  end
   subject { page }
 
   describe "signin" do
@@ -36,7 +38,19 @@ describe "Authentication" do
 
     describe "for non-signed-in users" do
       let(:user) { FactoryGirl.create(:user) }
+      describe "with valid information" do
+        let(:user) { FactoryGirl.create(:user) }
+        before { sign_in user }
 
+        it { should have_selector('title', text: user.name) }
+
+        it { should have_link('Users',    href: users_path) }
+        it { should have_link('Profile',  href: user_path(user)) }
+        it { should have_link('Settings', href: edit_user_path(user)) }
+        it { should have_link('Sign out', href: signout_path) }
+
+        it { should_not have_link('Sign in', href: signin_path) }
+      end
       describe "in the Users controller" do
 
         describe "visiting the edit page" do
