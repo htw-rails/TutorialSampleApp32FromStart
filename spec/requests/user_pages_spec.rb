@@ -51,6 +51,10 @@ describe "User pages" do
          before { click_button submit }
  
          it { should have_selector('title', text: "Example User") }
+         describe "followed by signout" do
+           before { click_link "Sign out" }
+           it { should have_link('Sign in') }
+         end
        end
        describe "after saving the user" do
           before { click_button submit }
