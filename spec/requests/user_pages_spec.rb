@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe "User pages" do
-
+  
   subject { page }
 
   describe "signup page" do
@@ -41,7 +41,7 @@ describe "User pages" do
          fill_in "Name",         with: "Example User"
          fill_in "Email",        with: "user@example.com"
          fill_in "Password",     with: "foobar"
-         fill_in "Confirmation", with: "foobar"
+         fill_in I18n.t('activerecord.attributes.user.password_confirmation'), with: "foobar"
        end
 
        it "should create a user" do
@@ -82,6 +82,23 @@ describe "User pages" do
        before { click_button "Save changes" }
 
        it { should have_content('error') }
+     end
+     describe "with valid information" do
+       let(:new_name)  { "New Name" }
+       let(:new_email) { "new@example.com" }
+       before do
+         fill_in "Name",             with: new_name
+         fill_in "Email",            with: new_email
+         fill_in "Password",         with: user.password
+         fill_in I18n.t('activerecord.attributes.user.password_confirmation'), with: user.password
+         click_button "Save changes"
+       end
+
+       it { should have_selector('title', text: new_name) }
+       it { should have_selector('div.alert.alert-success') }
+       it { should have_link('Sign out', href: signout_path) }
+       specify { user.reload.name.should  == new_name }
+       specify { user.reload.email.should == new_email }
      end
    end
 end

@@ -7,3 +7,4 @@ en:
     attributes:
       user:
         password_digest: "Password"
+        password_confirmation: "Password Confirmation"
