@@ -22,6 +22,7 @@ group :development, :test do
   # https://github.com/aselder/roodi/commit/a01982699867f8d994a2c1b5cd9fd865364f795f
   #simplecov
   gem 'simplecov', :require => false
+  gem 'faker'
 end
 
 # Gems used only for assets and not required
