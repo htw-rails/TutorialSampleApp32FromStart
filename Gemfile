@@ -3,6 +3,8 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.6'
 gem 'bootstrap-sass'
 gem 'bcrypt-ruby'
+gem 'will_paginate'
+gem 'bootstrap-will_paginate'
 
 
 group :development do
