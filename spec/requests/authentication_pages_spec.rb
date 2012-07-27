@@ -29,7 +29,7 @@ describe "Authentication" do
        it { should_not have_error_message }
       end
     end
-    describe "with valid information" do
+    describe "a signed in user" do
       let(:user) { FactoryGirl.create(:user) }
       before { sign_in user }
     
@@ -38,7 +38,17 @@ describe "Authentication" do
       it { should have_link('Settings', href: edit_user_path(user)) }
       it { should have_link('Sign out', href: signout_path) }
       it { should_not have_link('Sign in', href: signin_path) }
+      
+      it "is redirected to the root page if trying to access users/new" do
+        get new_user_path
+        response.should redirect_to root_path
+      end
+      it "is redirected to the root page if trying to access users/create" do
+         post users_path
+         response.should redirect_to root_path
+       end
     end
+    
   end
   describe "authorization" do
 
