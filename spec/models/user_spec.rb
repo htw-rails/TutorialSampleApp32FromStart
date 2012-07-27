@@ -17,6 +17,14 @@ describe User do
   it { should respond_to(:authenticate) }
   it { should be_valid }
   it { should_not be_admin }
+  
+  describe "accessible attributes" do
+     it "should not allow access to adim" do
+       expect {User.new(admin: true)}
+         .to raise_error(ActiveModel::MassAssignmentSecurity::Error)
+     end    
+   end
+  
   describe "with admin attribute set to 'true'" do
     before { @user.toggle!(:admin) }
 
