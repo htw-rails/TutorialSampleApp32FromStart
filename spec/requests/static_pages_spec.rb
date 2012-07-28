@@ -45,13 +45,13 @@ describe "Static pages" do
           visit root_path
         end
         it "should render the user's feed" do
-           user.feed.each do |item|
-             page.should have_selector("li##{item.id}", text: item.content)
-           end
-         end
-         it "should show the number of microposts" do
-           page.should have_selector 'span', text: '2 microposts'
-         end
+          user.feed.each do |item|
+            page.should have_selector("li##{item.id}", text: item.content)
+          end
+        end
+        it "should show the number of microposts" do
+          page.should have_selector 'span', text: '2 microposts'
+        end
       end
       describe "with no microposts" do
         it "should show the number of microposts" do
@@ -66,6 +66,30 @@ describe "Static pages" do
         it "should show the number of microposts" do
           page.should have_selector 'span', text: '1 micropost'
         end
+      end
+      describe "with a lot of microposts" do
+        before do
+          1.upto(50) { |i|
+            FactoryGirl.create(:micropost, user: user, 
+            content: "Lorem ipsum #{i}") }
+          visit root_path
+        end
+        #<%= will_paginate @feed_items %>
+        
+        describe "should paginate the feed" do
+          it "containing all items" do
+            user.feed.paginate(page: 1).each do |item|
+              page.should have_selector('li', text: item.content)
+            end
+          end
+          it "by showing 30 items on a page" do
+            page.should match_exactly(30,'li.feed_item')
+          end
+          it "and show the page navigator" do
+            page.should have_selector('div.pagination')
+          end
+        end
+  
       end
 
      end
