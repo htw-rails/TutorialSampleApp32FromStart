@@ -94,6 +94,10 @@ GEM
       sexp_processor (~> 3.0)
     gherkin (2.11.1)
       json (>= 1.4.6)
+    grit (2.5.0)
+      diff-lcs (~> 1.1)
+      mime-types (~> 1.15)
+      posix-spawn (~> 0.3.6)
     growl (1.0.3)
     guard (1.2.3)
       listen (>= 0.4.2)
@@ -146,6 +150,7 @@ GEM
     nokogiri (1.5.5)
     pg (0.14.0)
     polyglot (0.3.3)
+    posix-spawn (0.3.6)
     progressbar (0.11.0)
     rack (1.4.1)
     rack-cache (1.2)
@@ -264,6 +269,7 @@ DEPENDENCIES
   factory_girl_rails
   faker
   fattr
+  grit
   growl
   guard-rspec
   guard-spork

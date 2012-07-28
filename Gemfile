@@ -9,6 +9,7 @@ gem 'bootstrap-will_paginate'
 
 group :development do
   gem 'growl'
+  gem 'grit'
 end
 group :development, :test do
   gem 'sqlite3'
