@@ -9,6 +9,6 @@
 					'warningNumber': 40,
 					'displayFormat' : '#input/#max characters'
 			};
-			$('#micropostTextArea').textareaCount(options2);
+			$('#micropost_content').textareaCount(options2);
 
 		});
