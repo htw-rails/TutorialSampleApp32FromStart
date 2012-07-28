@@ -31,15 +31,19 @@ module MetricalWorkaround
       puts "#######################################" if verbose
       puts "#{sourcefile}" if verbose
       puts "#######################################" if verbose
-      lines = File.open(sourcefile).readlines
-      lines.each do |line|
-        if metrical_workaround_regex =~ line
-          puts line if verbose
-          line = substitute(line)
-          puts line if verbose
+      File.open(sourcefile) do |inputfile |
+        lines = inputfile.readlines
+        lines.each do |line|
+          if metrical_workaround_regex =~ line
+            puts line if verbose
+            line = substitute(line)
+            puts line if verbose
+          end
+        end
+        File.open(sourcefile,'w') do |outputfile|
+          outputfile.write lines.join
         end
       end
-      
     end
   end
   def metrical_workaround_regex

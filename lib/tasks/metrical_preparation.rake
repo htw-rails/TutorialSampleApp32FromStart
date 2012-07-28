@@ -5,7 +5,6 @@ include MetricalWorkaround
 namespace :metrical do 
   desc "revert hash syntax 1.9 => 1.8 as dirty workaround"
   task :revert, :verbose do |t,args|
-    puts puts "Args were: #{args}"
     replace_hashes(args[:verbose])
   end
 end
