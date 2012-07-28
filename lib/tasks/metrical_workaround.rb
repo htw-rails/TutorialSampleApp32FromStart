@@ -81,7 +81,7 @@ module MetricalWorkaround
     status.send(change).keys.select { |fn| /\.rb$/ =~ fn}
   end
   def print_summary
-    puts "Modified #{git_files(git_status,:changed)} files."
+    puts "Modified #{git_files(git_status,:changed).size} files."
     puts "now run metrical and then"
     puts "run git checkout *.rb to revert ruby files"
   end
