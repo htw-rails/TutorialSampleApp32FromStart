@@ -20,6 +20,7 @@ module MetricalWorkaround
   def replace_hashes(verbose = false)
     if working_directory_clean?
       do_replace_hashes(verbose)
+      print_summary
     else
       puts "Your working directory is not clean, please commit your changes"
       puts " before you let me mingle with your ruby sources!"
@@ -59,10 +60,7 @@ module MetricalWorkaround
     string.gsub!(metrical_workaround_regex, ':\1 => ')
   end
   def working_directory_clean?
-    app_dir = File.expand_path("../../..", __FILE__)
-    puts app_dir
-    repo = Grit::Repo.new(app_dir)
-    status = repo.status
+    status = git_status
     working_directory_clean = true
     [:untracked,:changed,:added].each do | change|
       a = status.send(change).keys.select { |fn| /\.rb$/ =~ fn}
@@ -74,4 +72,14 @@ module MetricalWorkaround
     end
     working_directory_clean
   end  
+  def git_status
+    app_dir = File.expand_path("../../..", __FILE__)
+    repo = Grit::Repo.new(app_dir)
+    repo.status
+  end
+  def print_summary
+    puts "Modified #{git_status.changed.size} files."
+    puts "now run metrical and then"
+    puts "run git checkout *.rb to revert ruby files"
+  end
 end
