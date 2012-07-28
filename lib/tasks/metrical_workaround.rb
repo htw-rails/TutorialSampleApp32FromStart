@@ -1,27 +1,45 @@
+
+# this is a workaround replacing new ruby 1.9 hash syntax with the older one
+# to be able to use metrical which uses ruby_parser wich as of now (28/07/J2012)
+# can't handle the 1.9 syntax. Watch for changes:
+# https://github.com/seattlerb/ruby_parser
+# 
+# usage: 
+# put both files into the lib/tasks 
+# run
+#      rake metrical:revert
+# run
+#      rake metrical:revert[:verbose]
+# to see all lines with their replacements
+
+
 require 'grit'
 
 module MetricalWorkaround
-  def replace_hashes
+  
+  def replace_hashes(verbose = false)
     if working_directory_clean?
-      do_replace_hashes
+      do_replace_hashes(verbose)
     else
       puts "Your working directory is not clean, please commit your changes"
       puts " before you let me mingle with your ruby sources!"
     end
   end
-  def do_replace_hashes
+  
+  def do_replace_hashes(verbose)
     Dir.glob('**/*.rb').each do | sourcefile |
-      puts "#######################################"
-      puts "#{sourcefile}"
-      puts "#######################################"
+      puts "#######################################" if verbose
+      puts "#{sourcefile}" if verbose
+      puts "#######################################" if verbose
       lines = File.open(sourcefile).readlines
       lines.each do |line|
         if metrical_workaround_regex =~ line
-          puts line
+          puts line if verbose
           line = substitute(line)
-          puts line
+          puts line if verbose
         end
       end
+      
     end
   end
   def metrical_workaround_regex

@@ -2,10 +2,11 @@
 require File.expand_path("../../../lib/tasks/metrical_workaround", __FILE__)
 include MetricalWorkaround
 
-namespace :metrical do
+namespace :metrical do 
   desc "revert hash syntax 1.9 => 1.8 as dirty workaround"
-  task :revert do
-    replace_hashes
+  task :revert, :verbose do |t,args|
+    puts puts "Args were: #{args}"
+    replace_hashes(args[:verbose])
   end
 end
 
