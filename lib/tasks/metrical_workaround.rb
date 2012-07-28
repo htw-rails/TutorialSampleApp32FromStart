@@ -63,7 +63,7 @@ module MetricalWorkaround
     status = git_status
     working_directory_clean = true
     [:untracked,:changed,:added].each do | change|
-      a = status.send(change).keys.select { |fn| /\.rb$/ =~ fn}
+      a = git_files(status,change)
       if a.any?
         puts "You have #{change} ruby files:"
         puts a.inspect
@@ -77,8 +77,11 @@ module MetricalWorkaround
     repo = Grit::Repo.new(app_dir)
     repo.status
   end
+  def git_files(status,change)
+    status.send(change).keys.select { |fn| /\.rb$/ =~ fn}
+  end
   def print_summary
-    puts "Modified #{git_status.changed.size} files."
+    puts "Modified #{git_files(git_status,:changed)} files."
     puts "now run metrical and then"
     puts "run git checkout *.rb to revert ruby files"
   end
