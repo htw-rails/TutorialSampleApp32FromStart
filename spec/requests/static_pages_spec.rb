@@ -33,20 +33,42 @@ describe "Static pages" do
      page.should have_selector 'h1', text: 'Sample App'
     end
     describe "for signed-in users" do
-        let(:user) { FactoryGirl.create(:user) }
+      let(:user) { FactoryGirl.create(:user) }
+      before do
+        sign_in user
+        visit root_path
+      end
+      describe "with more than one micropost" do
         before do
           FactoryGirl.create(:micropost, user: user, content: "Lorem ipsum")
           FactoryGirl.create(:micropost, user: user, content: "Dolor sit amet")
-          sign_in user
           visit root_path
         end
-
         it "should render the user's feed" do
-          user.feed.each do |item|
-            page.should have_selector("li##{item.id}", text: item.content)
-          end
+           user.feed.each do |item|
+             page.should have_selector("li##{item.id}", text: item.content)
+           end
+         end
+         it "should show the number of microposts" do
+           page.should have_selector 'span', text: '2 microposts'
+         end
+      end
+      describe "with no microposts" do
+        it "should show the number of microposts" do
+          page.should have_selector 'span', text: '0 microposts'
         end
       end
+      describe "with exactly one micropost" do
+        before do
+           FactoryGirl.create(:micropost, user: user, content: "Lorem ipsum")
+           visit root_path
+         end
+        it "should show the number of microposts" do
+          page.should have_selector 'span', text: '1 micropost'
+        end
+      end
+
+     end
   end
 
   describe "Help page" do
