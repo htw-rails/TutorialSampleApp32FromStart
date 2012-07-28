@@ -36,7 +36,7 @@ module MetricalWorkaround
         lines.each do |line|
           if metrical_workaround_regex =~ line
             puts line if verbose
-            line = substitute(line)
+            substitute!(line)
             puts line if verbose
           end
         end
@@ -53,6 +53,10 @@ module MetricalWorkaround
     #skip comment lines
     return string if /^\s*#/ =~ string
     string.gsub(metrical_workaround_regex, ':\1 => ')
+  end
+  def substitute!(string)
+    return string if /^\s*#/ =~ string
+    string.gsub!(metrical_workaround_regex, ':\1 => ')
   end
   def working_directory_clean?
     app_dir = File.expand_path("../../..", __FILE__)
