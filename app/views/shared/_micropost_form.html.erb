@@ -1,3 +1,6 @@
+
+
+	
 <%= form_for(@micropost) do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
   <div class="field">
@@ -5,3 +8,6 @@
   </div>
   <%= f.submit "Post", class: "btn btn-large btn-primary" %>
 <% end %>
+
+	<h2>Count and limit characters, format the defined format display information</h2>
+	<textarea id="testTextarea2" cols="70" rows="10"></textarea>
