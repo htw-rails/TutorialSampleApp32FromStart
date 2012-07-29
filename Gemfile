@@ -18,6 +18,7 @@ group :development, :test do
   gem 'guard-rspec'
   # instead of not working metric_fu, without coverage
   gem 'metrical', :require => false 
+  #gem 'ruby_parser', git: 'git://github.com/seattlerb/ruby_parser.git'
   gem 'fattr', :require => false 
   gem 'arrayfields', :require => false 
   gem 'map', :require => false 

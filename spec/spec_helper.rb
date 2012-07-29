@@ -1,9 +1,9 @@
 require 'rubygems'
 require 'spork'
-require 'simplecov'
 
-#uncomment the following line to generate a test coverage report:
-#SimpleCov.start
+#uncomment the following lines to generate a test coverage report:
+require 'simplecov'
+SimpleCov.start
 
 #uncomment the following line to use spork with the debugger
 #require 'spork/ext/ruby-debug'

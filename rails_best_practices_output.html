@@ -1,0 +1,848 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <meta charset='UTF-8' />
+    <title>Output of rails_best_practices</title>
+    <style type="text/css">
+      body {
+        color: #333;
+        background: #eee;
+        padding: 0 20px;
+      }
+      h1 {
+        color: ##4E4E4E;
+      }
+      p {
+        margin: 5px 0;
+      }
+      table {
+        background: white;
+        border: 1px solid #666;
+        border-collapse: collapse;
+        margin: 10px 0;
+        font-size: 14px;
+      }
+      table th, table td {
+        padding: 4px;
+        border: 1px solid #D0D0D0;
+      }
+      table th {
+        background-color: #DFC;
+        color: #337022;
+      }
+      table td.filename {
+        color: #ED1556;
+      }
+      table tr:hover {
+        background-color: #FFFFC0;
+      }
+      ul {
+        clear: both;
+        display: inline-block;
+        padding: 0;
+        margin: 0;
+      }
+      ul li {
+       list-style: none;
+       display: none;
+       float: left;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>rails_best_practices output</h1>
+    <p>
+      Please go to
+      <a href='http://rails-bestpractices.com' target='_blank'>http://rails-bestpractices.com</a>
+      to see more useful Rails Best Practices.
+    </p>
+    <p>
+        Found 81 warnings.
+    </p>
+    <ul>
+        <li>
+            <input type="checkbox" id="HashSyntaxReview" value="HashSyntaxReview" />
+            <label for="HashSyntaxReview">HashSyntaxReview</label>
+        </li>
+        <li>
+            <input type="checkbox" id="NotUseTimeAgoInWordsReview" value="NotUseTimeAgoInWordsReview" />
+            <label for="NotUseTimeAgoInWordsReview">NotUseTimeAgoInWordsReview</label>
+        </li>
+        <li>
+            <input type="checkbox" id="RemoveEmptyHelpersReview" value="RemoveEmptyHelpersReview" />
+            <label for="RemoveEmptyHelpersReview">RemoveEmptyHelpersReview</label>
+        </li>
+        <li>
+            <input type="checkbox" id="RemoveUnusedMethodsInHelpersReview" value="RemoveUnusedMethodsInHelpersReview" />
+            <label for="RemoveUnusedMethodsInHelpersReview">RemoveUnusedMethodsInHelpersReview</label>
+        </li>
+        <li>
+            <input type="checkbox" id="ReplaceInstanceVariableWithLocalVariableReview" value="ReplaceInstanceVariableWithLocalVariableReview" />
+            <label for="ReplaceInstanceVariableWithLocalVariableReview">ReplaceInstanceVariableWithLocalVariableReview</label>
+        </li>
+        <li>
+            <input type="checkbox" id="LongLineCheck" value="LongLineCheck" />
+            <label for="LongLineCheck">LongLineCheck</label>
+        </li>
+        <li>
+            <input type="checkbox" id="RemoveTabCheck" value="RemoveTabCheck" />
+            <label for="RemoveTabCheck">RemoveTabCheck</label>
+        </li>
+        <li>
+            <input type="checkbox" id="RemoveTrailingWhitespaceCheck" value="RemoveTrailingWhitespaceCheck" />
+            <label for="RemoveTrailingWhitespaceCheck">RemoveTrailingWhitespaceCheck</label>
+        </li>
+    </ul>
+    <table>
+      <tr>
+        <th>Filename</th>
+        <th>Line Number</th>
+        <th>Warning Message</th>
+      </tr>
+        <tr class="HashSyntaxReview">
+          <td class='filename'>
+              <a href='txmt://open/?url=file:///Users/kleinen/development/rails/TutorialSampleApp32FromStart/app/controllers/static_pages_controller.rb&amp;line=5'>app/controllers/static_pages_controller.rb</a>
+          </td>
+          <td class='line'>5</td>
+          <td class='message'>
+            <a href='#' target='_blank'>change Hash Syntax to 1.9</a>
+          </td>
+        </tr>
+        <tr class="HashSyntaxReview">
+          <td class='filename'>
+              <a href='txmt://open/?url=file:///Users/kleinen/development/rails/TutorialSampleApp32FromStart/db/schema.rb&amp;line=14'>db/schema.rb</a>
+          </td>
+          <td class='line'>14</td>
+          <td class='message'>
+            <a href='#' target='_blank'>change Hash Syntax to 1.9</a>
+          </td>
+        </tr>
+        <tr class="HashSyntaxReview">
+          <td class='filename'>
+              <a href='txmt://open/?url=file:///Users/kleinen/development/rails/TutorialSampleApp32FromStart/db/schema.rb&amp;line=16'>db/schema.rb</a>
+          </td>
+          <td class='line'>16</td>
+          <td class='message'>
+            <a href='#' target='_blank'>change Hash Syntax to 1.9</a>
+          </td>
+        </tr>
+        <tr class="HashSyntaxReview">
+          <td class='filename'>
+              <a href='txmt://open/?url=file:///Users/kleinen/development/rails/TutorialSampleApp32FromStart/db/schema.rb&amp;line=19'>db/schema.rb</a>
+          </td>
+          <td class='line'>19</td>
+          <td class='message'>
+            <a href='#' target='_blank'>change Hash Syntax to 1.9</a>
+          </td>
+        </tr>
+        <tr class="HashSyntaxReview">
+          <td class='filename'>
+              <a href='txmt://open/?url=file:///Users/kleinen/development/rails/TutorialSampleApp32FromStart/db/schema.rb&amp;line=20'>db/schema.rb</a>
+          </td>
+          <td class='line'>20</td>
+          <td class='message'>
+            <a href='#' target='_blank'>change Hash Syntax to 1.9</a>
+          </td>
+        </tr>
+        <tr class="HashSyntaxReview">
+          <td class='filename'>
+              <a href='txmt://open/?url=file:///Users/kleinen/development/rails/TutorialSampleApp32FromStart/db/schema.rb&amp;line=23'>db/schema.rb</a>
+          </td>
+          <td class='line'>23</td>
+          <td class='message'>
+            <a href='#' target='_blank'>change Hash Syntax to 1.9</a>
+          </td>
+        </tr>
+        <tr class="HashSyntaxReview">
+          <td class='filename'>
+              <a href='txmt://open/?url=file:///Users/kleinen/development/rails/TutorialSampleApp32FromStart/db/schema.rb&amp;line=25'>db/schema.rb</a>
+          </td>
+          <td class='line'>25</td>
+          <td class='message'>
+            <a href='#' target='_blank'>change Hash Syntax to 1.9</a>
+          </td>
+        </tr>
+        <tr class="HashSyntaxReview">
+          <td class='filename'>
+              <a href='txmt://open/?url=file:///Users/kleinen/development/rails/TutorialSampleApp32FromStart/db/schema.rb&amp;line=28'>db/schema.rb</a>
+          </td>
+          <td class='line'>28</td>
+          <td class='message'>
+            <a href='#' target='_blank'>change Hash Syntax to 1.9</a>
+          </td>
+        </tr>
+        <tr class="HashSyntaxReview">
+          <td class='filename'>
+              <a href='txmt://open/?url=file:///Users/kleinen/development/rails/TutorialSampleApp32FromStart/db/schema.rb&amp;line=29'>db/schema.rb</a>
+          </td>
+          <td class='line'>29</td>
+          <td class='message'>
+            <a href='#' target='_blank'>change Hash Syntax to 1.9</a>
+          </td>
+        </tr>
+        <tr class="HashSyntaxReview">
+          <td class='filename'>
+              <a href='txmt://open/?url=file:///Users/kleinen/development/rails/TutorialSampleApp32FromStart/db/schema.rb&amp;line=32'>db/schema.rb</a>
+          </td>
+          <td class='line'>32</td>
+          <td class='message'>
+            <a href='#' target='_blank'>change Hash Syntax to 1.9</a>
+          </td>
+        </tr>
+        <tr class="HashSyntaxReview">
+          <td class='filename'>
+              <a href='txmt://open/?url=file:///Users/kleinen/development/rails/TutorialSampleApp32FromStart/db/schema.rb&amp;line=33'>db/schema.rb</a>
+          </td>
+          <td class='line'>33</td>
+          <td class='message'>
+            <a href='#' target='_blank'>change Hash Syntax to 1.9</a>
+          </td>
+        </tr>
+        <tr class="HashSyntaxReview">
+          <td class='filename'>
+              <a href='txmt://open/?url=file:///Users/kleinen/development/rails/TutorialSampleApp32FromStart/db/schema.rb&amp;line=34'>db/schema.rb</a>
+          </td>
+          <td class='line'>34</td>
+          <td class='message'>
+            <a href='#' target='_blank'>change Hash Syntax to 1.9</a>
+          </td>
+        </tr>
+        <tr class="HashSyntaxReview">
+          <td class='filename'>
+              <a href='txmt://open/?url=file:///Users/kleinen/development/rails/TutorialSampleApp32FromStart/db/schema.rb&amp;line=36'>db/schema.rb</a>
+          </td>
+          <td class='line'>36</td>
+          <td class='message'>
+            <a href='#' target='_blank'>change Hash Syntax to 1.9</a>
+          </td>
+        </tr>
+        <tr class="HashSyntaxReview">
+          <td class='filename'>
+              <a href='txmt://open/?url=file:///Users/kleinen/development/rails/TutorialSampleApp32FromStart/db/schema.rb&amp;line=39'>db/schema.rb</a>
+          </td>
+          <td class='line'>39</td>
+          <td class='message'>
+            <a href='#' target='_blank'>change Hash Syntax to 1.9</a>
+          </td>
+        </tr>
+        <tr class="HashSyntaxReview">
+          <td class='filename'>
+              <a href='txmt://open/?url=file:///Users/kleinen/development/rails/TutorialSampleApp32FromStart/db/schema.rb&amp;line=40'>db/schema.rb</a>
+          </td>
+          <td class='line'>40</td>
+          <td class='message'>
+            <a href='#' target='_blank'>change Hash Syntax to 1.9</a>
+          </td>
+        </tr>
+        <tr class="HashSyntaxReview">
+          <td class='filename'>
+              <a href='txmt://open/?url=file:///Users/kleinen/development/rails/TutorialSampleApp32FromStart/db/schema.rb&amp;line=43'>db/schema.rb</a>
+          </td>
+          <td class='line'>43</td>
+          <td class='message'>
+            <a href='#' target='_blank'>change Hash Syntax to 1.9</a>
+          </td>
+        </tr>
+        <tr class="HashSyntaxReview">
+          <td class='filename'>
+              <a href='txmt://open/?url=file:///Users/kleinen/development/rails/TutorialSampleApp32FromStart/db/schema.rb&amp;line=46'>db/schema.rb</a>
+          </td>
+          <td class='line'>46</td>
+          <td class='message'>
+            <a href='#' target='_blank'>change Hash Syntax to 1.9</a>
+          </td>
+        </tr>
+        <tr class="HashSyntaxReview">
+          <td class='filename'>
+              <a href='txmt://open/?url=file:///Users/kleinen/development/rails/TutorialSampleApp32FromStart/db/schema.rb&amp;line=47'>db/schema.rb</a>
+          </td>
+          <td class='line'>47</td>
+          <td class='message'>
+            <a href='#' target='_blank'>change Hash Syntax to 1.9</a>
+          </td>
+        </tr>
+        <tr class="HashSyntaxReview">
+          <td class='filename'>
+              <a href='txmt://open/?url=file:///Users/kleinen/development/rails/TutorialSampleApp32FromStart/lib/tasks/cucumber.rake&amp;line=17'>lib/tasks/cucumber.rake</a>
+          </td>
+          <td class='line'>17</td>
+          <td class='message'>
+            <a href='#' target='_blank'>change Hash Syntax to 1.9</a>
+          </td>
+        </tr>
+        <tr class="HashSyntaxReview">
+          <td class='filename'>
+              <a href='txmt://open/?url=file:///Users/kleinen/development/rails/TutorialSampleApp32FromStart/lib/tasks/cucumber.rake&amp;line=23'>lib/tasks/cucumber.rake</a>
+          </td>
+          <td class='line'>23</td>
+          <td class='message'>
+            <a href='#' target='_blank'>change Hash Syntax to 1.9</a>
+          </td>
+        </tr>
+        <tr class="HashSyntaxReview">
+          <td class='filename'>
+              <a href='txmt://open/?url=file:///Users/kleinen/development/rails/TutorialSampleApp32FromStart/lib/tasks/cucumber.rake&amp;line=29'>lib/tasks/cucumber.rake</a>
+          </td>
+          <td class='line'>29</td>
+          <td class='message'>
+            <a href='#' target='_blank'>change Hash Syntax to 1.9</a>
+          </td>
+        </tr>
+        <tr class="HashSyntaxReview">
+          <td class='filename'>
+              <a href='txmt://open/?url=file:///Users/kleinen/development/rails/TutorialSampleApp32FromStart/lib/tasks/cucumber.rake&amp;line=36'>lib/tasks/cucumber.rake</a>
+          </td>
+          <td class='line'>36</td>
+          <td class='message'>
+            <a href='#' target='_blank'>change Hash Syntax to 1.9</a>
+          </td>
+        </tr>
+        <tr class="HashSyntaxReview">
+          <td class='filename'>
+              <a href='txmt://open/?url=file:///Users/kleinen/development/rails/TutorialSampleApp32FromStart/lib/tasks/cucumber.rake&amp;line=45'>lib/tasks/cucumber.rake</a>
+          </td>
+          <td class='line'>45</td>
+          <td class='message'>
+            <a href='#' target='_blank'>change Hash Syntax to 1.9</a>
+          </td>
+        </tr>
+        <tr class="HashSyntaxReview">
+          <td class='filename'>
+              <a href='txmt://open/?url=file:///Users/kleinen/development/rails/TutorialSampleApp32FromStart/lib/tasks/cucumber.rake&amp;line=47'>lib/tasks/cucumber.rake</a>
+          </td>
+          <td class='line'>47</td>
+          <td class='message'>
+            <a href='#' target='_blank'>change Hash Syntax to 1.9</a>
+          </td>
+        </tr>
+        <tr class="HashSyntaxReview">
+          <td class='filename'>
+              <a href='txmt://open/?url=file:///Users/kleinen/development/rails/TutorialSampleApp32FromStart/lib/tasks/cucumber.rake&amp;line=49'>lib/tasks/cucumber.rake</a>
+          </td>
+          <td class='line'>49</td>
+          <td class='message'>
+            <a href='#' target='_blank'>change Hash Syntax to 1.9</a>
+          </td>
+        </tr>
+        <tr class="HashSyntaxReview">
+          <td class='filename'>
+              <a href='txmt://open/?url=file:///Users/kleinen/development/rails/TutorialSampleApp32FromStart/lib/tasks/cucumber.rake&amp;line=57'>lib/tasks/cucumber.rake</a>
+          </td>
+          <td class='line'>57</td>
+          <td class='message'>
+            <a href='#' target='_blank'>change Hash Syntax to 1.9</a>
+          </td>
+        </tr>
+        <tr class="NotUseTimeAgoInWordsReview">
+          <td class='filename'>
+              <a href='txmt://open/?url=file:///Users/kleinen/development/rails/TutorialSampleApp32FromStart/app/views/shared/_feed_item_raw.html.erb&amp;line=3'>app/views/shared/_feed_item_raw.html.erb</a>
+          </td>
+          <td class='line'>3</td>
+          <td class='message'>
+            <a href='http://rails-bestpractices.com/posts/105-not-use-time_ago_in_words' target='_blank'>not use time_ago_in_words</a>
+          </td>
+        </tr>
+        <tr class="RemoveEmptyHelpersReview">
+          <td class='filename'>
+              <a href='txmt://open/?url=file:///Users/kleinen/development/rails/TutorialSampleApp32FromStart/app/helpers/static_pages_helper.rb&amp;line=1'>app/helpers/static_pages_helper.rb</a>
+          </td>
+          <td class='line'>1</td>
+          <td class='message'>
+            <a href='http://rails-bestpractices.com/posts/72-remove-empty-helpers' target='_blank'>remove empty helpers</a>
+          </td>
+        </tr>
+        <tr class="RemoveUnusedMethodsInHelpersReview">
+          <td class='filename'>
+              <a href='txmt://open/?url=file:///Users/kleinen/development/rails/TutorialSampleApp32FromStart/app/helpers/sessions_helper.rb&amp;line=2'>app/helpers/sessions_helper.rb</a>
+          </td>
+          <td class='line'>2</td>
+          <td class='message'>
+            <a href='#' target='_blank'>remove unused methods (SessionsHelper#sign_in)</a>
+          </td>
+        </tr>
+        <tr class="RemoveUnusedMethodsInHelpersReview">
+          <td class='filename'>
+              <a href='txmt://open/?url=file:///Users/kleinen/development/rails/TutorialSampleApp32FromStart/app/helpers/sessions_helper.rb&amp;line=9'>app/helpers/sessions_helper.rb</a>
+          </td>
+          <td class='line'>9</td>
+          <td class='message'>
+            <a href='#' target='_blank'>remove unused methods (SessionsHelper#sign_out)</a>
+          </td>
+        </tr>
+        <tr class="RemoveUnusedMethodsInHelpersReview">
+          <td class='filename'>
+              <a href='txmt://open/?url=file:///Users/kleinen/development/rails/TutorialSampleApp32FromStart/app/helpers/sessions_helper.rb&amp;line=13'>app/helpers/sessions_helper.rb</a>
+          </td>
+          <td class='line'>13</td>
+          <td class='message'>
+            <a href='#' target='_blank'>remove unused methods (SessionsHelper#current_user=)</a>
+          </td>
+        </tr>
+        <tr class="RemoveUnusedMethodsInHelpersReview">
+          <td class='filename'>
+              <a href='txmt://open/?url=file:///Users/kleinen/development/rails/TutorialSampleApp32FromStart/app/helpers/sessions_helper.rb&amp;line=23'>app/helpers/sessions_helper.rb</a>
+          </td>
+          <td class='line'>23</td>
+          <td class='message'>
+            <a href='#' target='_blank'>remove unused methods (SessionsHelper#signed_in_user)</a>
+          </td>
+        </tr>
+        <tr class="RemoveUnusedMethodsInHelpersReview">
+          <td class='filename'>
+              <a href='txmt://open/?url=file:///Users/kleinen/development/rails/TutorialSampleApp32FromStart/app/helpers/sessions_helper.rb&amp;line=30'>app/helpers/sessions_helper.rb</a>
+          </td>
+          <td class='line'>30</td>
+          <td class='message'>
+            <a href='#' target='_blank'>remove unused methods (SessionsHelper#redirect_back_or)</a>
+          </td>
+        </tr>
+        <tr class="ReplaceInstanceVariableWithLocalVariableReview">
+          <td class='filename'>
+              <a href='txmt://open/?url=file:///Users/kleinen/development/rails/TutorialSampleApp32FromStart/app/views/shared/_feed.html.erb&amp;line=1'>app/views/shared/_feed.html.erb</a>
+          </td>
+          <td class='line'>1</td>
+          <td class='message'>
+            <a href='http://rails-bestpractices.com/posts/27-replace-instance-variable-with-local-variable' target='_blank'>replace instance variable with local variable</a>
+          </td>
+        </tr>
+        <tr class="ReplaceInstanceVariableWithLocalVariableReview">
+          <td class='filename'>
+              <a href='txmt://open/?url=file:///Users/kleinen/development/rails/TutorialSampleApp32FromStart/app/views/shared/_feed.html.erb&amp;line=3'>app/views/shared/_feed.html.erb</a>
+          </td>
+          <td class='line'>3</td>
+          <td class='message'>
+            <a href='http://rails-bestpractices.com/posts/27-replace-instance-variable-with-local-variable' target='_blank'>replace instance variable with local variable</a>
+          </td>
+        </tr>
+        <tr class="ReplaceInstanceVariableWithLocalVariableReview">
+          <td class='filename'>
+              <a href='txmt://open/?url=file:///Users/kleinen/development/rails/TutorialSampleApp32FromStart/app/views/shared/_feed.html.erb&amp;line=5'>app/views/shared/_feed.html.erb</a>
+          </td>
+          <td class='line'>5</td>
+          <td class='message'>
+            <a href='http://rails-bestpractices.com/posts/27-replace-instance-variable-with-local-variable' target='_blank'>replace instance variable with local variable</a>
+          </td>
+        </tr>
+        <tr class="ReplaceInstanceVariableWithLocalVariableReview">
+          <td class='filename'>
+              <a href='txmt://open/?url=file:///Users/kleinen/development/rails/TutorialSampleApp32FromStart/app/views/shared/_follow.html.erb&amp;line=1'>app/views/shared/_follow.html.erb</a>
+          </td>
+          <td class='line'>1</td>
+          <td class='message'>
+            <a href='http://rails-bestpractices.com/posts/27-replace-instance-variable-with-local-variable' target='_blank'>replace instance variable with local variable</a>
+          </td>
+        </tr>
+        <tr class="ReplaceInstanceVariableWithLocalVariableReview">
+          <td class='filename'>
+              <a href='txmt://open/?url=file:///Users/kleinen/development/rails/TutorialSampleApp32FromStart/app/views/shared/_follow_form.html.erb&amp;line=1'>app/views/shared/_follow_form.html.erb</a>
+          </td>
+          <td class='line'>1</td>
+          <td class='message'>
+            <a href='http://rails-bestpractices.com/posts/27-replace-instance-variable-with-local-variable' target='_blank'>replace instance variable with local variable</a>
+          </td>
+        </tr>
+        <tr class="ReplaceInstanceVariableWithLocalVariableReview">
+          <td class='filename'>
+              <a href='txmt://open/?url=file:///Users/kleinen/development/rails/TutorialSampleApp32FromStart/app/views/shared/_follow_form.html.erb&amp;line=3'>app/views/shared/_follow_form.html.erb</a>
+          </td>
+          <td class='line'>3</td>
+          <td class='message'>
+            <a href='http://rails-bestpractices.com/posts/27-replace-instance-variable-with-local-variable' target='_blank'>replace instance variable with local variable</a>
+          </td>
+        </tr>
+        <tr class="ReplaceInstanceVariableWithLocalVariableReview">
+          <td class='filename'>
+              <a href='txmt://open/?url=file:///Users/kleinen/development/rails/TutorialSampleApp32FromStart/app/views/shared/_micropost_form.html.erb&amp;line=2'>app/views/shared/_micropost_form.html.erb</a>
+          </td>
+          <td class='line'>2</td>
+          <td class='message'>
+            <a href='http://rails-bestpractices.com/posts/27-replace-instance-variable-with-local-variable' target='_blank'>replace instance variable with local variable</a>
+          </td>
+        </tr>
+        <tr class="ReplaceInstanceVariableWithLocalVariableReview">
+          <td class='filename'>
+              <a href='txmt://open/?url=file:///Users/kleinen/development/rails/TutorialSampleApp32FromStart/app/views/shared/_stats.html.erb&amp;line=3'>app/views/shared/_stats.html.erb</a>
+          </td>
+          <td class='line'>3</td>
+          <td class='message'>
+            <a href='http://rails-bestpractices.com/posts/27-replace-instance-variable-with-local-variable' target='_blank'>replace instance variable with local variable</a>
+          </td>
+        </tr>
+        <tr class="ReplaceInstanceVariableWithLocalVariableReview">
+          <td class='filename'>
+              <a href='txmt://open/?url=file:///Users/kleinen/development/rails/TutorialSampleApp32FromStart/app/views/shared/_stats.html.erb&amp;line=5'>app/views/shared/_stats.html.erb</a>
+          </td>
+          <td class='line'>5</td>
+          <td class='message'>
+            <a href='http://rails-bestpractices.com/posts/27-replace-instance-variable-with-local-variable' target='_blank'>replace instance variable with local variable</a>
+          </td>
+        </tr>
+        <tr class="ReplaceInstanceVariableWithLocalVariableReview">
+          <td class='filename'>
+              <a href='txmt://open/?url=file:///Users/kleinen/development/rails/TutorialSampleApp32FromStart/app/views/shared/_stats.html.erb&amp;line=9'>app/views/shared/_stats.html.erb</a>
+          </td>
+          <td class='line'>9</td>
+          <td class='message'>
+            <a href='http://rails-bestpractices.com/posts/27-replace-instance-variable-with-local-variable' target='_blank'>replace instance variable with local variable</a>
+          </td>
+        </tr>
+        <tr class="ReplaceInstanceVariableWithLocalVariableReview">
+          <td class='filename'>
+              <a href='txmt://open/?url=file:///Users/kleinen/development/rails/TutorialSampleApp32FromStart/app/views/shared/_stats.html.erb&amp;line=11'>app/views/shared/_stats.html.erb</a>
+          </td>
+          <td class='line'>11</td>
+          <td class='message'>
+            <a href='http://rails-bestpractices.com/posts/27-replace-instance-variable-with-local-variable' target='_blank'>replace instance variable with local variable</a>
+          </td>
+        </tr>
+        <tr class="ReplaceInstanceVariableWithLocalVariableReview">
+          <td class='filename'>
+              <a href='txmt://open/?url=file:///Users/kleinen/development/rails/TutorialSampleApp32FromStart/app/views/shared/_unfollow.html.erb&amp;line=1'>app/views/shared/_unfollow.html.erb</a>
+          </td>
+          <td class='line'>1</td>
+          <td class='message'>
+            <a href='http://rails-bestpractices.com/posts/27-replace-instance-variable-with-local-variable' target='_blank'>replace instance variable with local variable</a>
+          </td>
+        </tr>
+        <tr class="ReplaceInstanceVariableWithLocalVariableReview">
+          <td class='filename'>
+              <a href='txmt://open/?url=file:///Users/kleinen/development/rails/TutorialSampleApp32FromStart/app/views/users/_form.html.erb&amp;line=1'>app/views/users/_form.html.erb</a>
+          </td>
+          <td class='line'>1</td>
+          <td class='message'>
+            <a href='http://rails-bestpractices.com/posts/27-replace-instance-variable-with-local-variable' target='_blank'>replace instance variable with local variable</a>
+          </td>
+        </tr>
+        <tr class="ReplaceInstanceVariableWithLocalVariableReview">
+          <td class='filename'>
+              <a href='txmt://open/?url=file:///Users/kleinen/development/rails/TutorialSampleApp32FromStart/app/views/users/_form.html.erb&amp;line=16'>app/views/users/_form.html.erb</a>
+          </td>
+          <td class='line'>16</td>
+          <td class='message'>
+            <a href='http://rails-bestpractices.com/posts/27-replace-instance-variable-with-local-variable' target='_blank'>replace instance variable with local variable</a>
+          </td>
+        </tr>
+        <tr class="LongLineCheck">
+          <td class='filename'>
+              <a href='txmt://open/?url=file:///Users/kleinen/development/rails/TutorialSampleApp32FromStart/app/helpers/users_helper.rb&amp;line=6'>app/helpers/users_helper.rb</a>
+          </td>
+          <td class='line'>6</td>
+          <td class='message'>
+            <a href='' target='_blank'>line is longer than 80 characters (82 characters)</a>
+          </td>
+        </tr>
+        <tr class="LongLineCheck">
+          <td class='filename'>
+              <a href='txmt://open/?url=file:///Users/kleinen/development/rails/TutorialSampleApp32FromStart/app/controllers/sessions_controller.rb&amp;line=12'>app/controllers/sessions_controller.rb</a>
+          </td>
+          <td class='line'>12</td>
+          <td class='message'>
+            <a href='' target='_blank'>line is longer than 80 characters (83 characters)</a>
+          </td>
+        </tr>
+        <tr class="LongLineCheck">
+          <td class='filename'>
+              <a href='txmt://open/?url=file:///Users/kleinen/development/rails/TutorialSampleApp32FromStart/app/controllers/users_controller.rb&amp;line=2'>app/controllers/users_controller.rb</a>
+          </td>
+          <td class='line'>2</td>
+          <td class='message'>
+            <a href='' target='_blank'>line is longer than 80 characters (97 characters)</a>
+          </td>
+        </tr>
+        <tr class="LongLineCheck">
+          <td class='filename'>
+              <a href='txmt://open/?url=file:///Users/kleinen/development/rails/TutorialSampleApp32FromStart/config/initializers/secret_token.rb&amp;line=8'>config/initializers/secret_token.rb</a>
+          </td>
+          <td class='line'>8</td>
+          <td class='message'>
+            <a href='' target='_blank'>line is longer than 80 characters (130 characters)</a>
+          </td>
+        </tr>
+        <tr class="LongLineCheck">
+          <td class='filename'>
+              <a href='txmt://open/?url=file:///Users/kleinen/development/rails/TutorialSampleApp32FromStart/db/schema.rb&amp;line=4'>db/schema.rb</a>
+          </td>
+          <td class='line'>4</td>
+          <td class='message'>
+            <a href='' target='_blank'>line is longer than 80 characters (81 characters)</a>
+          </td>
+        </tr>
+        <tr class="LongLineCheck">
+          <td class='filename'>
+              <a href='txmt://open/?url=file:///Users/kleinen/development/rails/TutorialSampleApp32FromStart/db/schema.rb&amp;line=9'>db/schema.rb</a>
+          </td>
+          <td class='line'>9</td>
+          <td class='message'>
+            <a href='' target='_blank'>line is longer than 80 characters (86 characters)</a>
+          </td>
+        </tr>
+        <tr class="LongLineCheck">
+          <td class='filename'>
+              <a href='txmt://open/?url=file:///Users/kleinen/development/rails/TutorialSampleApp32FromStart/db/schema.rb&amp;line=23'>db/schema.rb</a>
+          </td>
+          <td class='line'>23</td>
+          <td class='message'>
+            <a href='' target='_blank'>line is longer than 80 characters (106 characters)</a>
+          </td>
+        </tr>
+        <tr class="LongLineCheck">
+          <td class='filename'>
+              <a href='txmt://open/?url=file:///Users/kleinen/development/rails/TutorialSampleApp32FromStart/db/schema.rb&amp;line=32'>db/schema.rb</a>
+          </td>
+          <td class='line'>32</td>
+          <td class='message'>
+            <a href='' target='_blank'>line is longer than 80 characters (91 characters)</a>
+          </td>
+        </tr>
+        <tr class="LongLineCheck">
+          <td class='filename'>
+              <a href='txmt://open/?url=file:///Users/kleinen/development/rails/TutorialSampleApp32FromStart/db/schema.rb&amp;line=33'>db/schema.rb</a>
+          </td>
+          <td class='line'>33</td>
+          <td class='message'>
+            <a href='' target='_blank'>line is longer than 80 characters (139 characters)</a>
+          </td>
+        </tr>
+        <tr class="LongLineCheck">
+          <td class='filename'>
+              <a href='txmt://open/?url=file:///Users/kleinen/development/rails/TutorialSampleApp32FromStart/db/schema.rb&amp;line=34'>db/schema.rb</a>
+          </td>
+          <td class='line'>34</td>
+          <td class='message'>
+            <a href='' target='_blank'>line is longer than 80 characters (91 characters)</a>
+          </td>
+        </tr>
+        <tr class="LongLineCheck">
+          <td class='filename'>
+              <a href='txmt://open/?url=file:///Users/kleinen/development/rails/TutorialSampleApp32FromStart/db/schema.rb&amp;line=47'>db/schema.rb</a>
+          </td>
+          <td class='line'>47</td>
+          <td class='message'>
+            <a href='' target='_blank'>line is longer than 80 characters (81 characters)</a>
+          </td>
+        </tr>
+        <tr class="RemoveTabCheck">
+          <td class='filename'>
+              <a href='txmt://open/?url=file:///Users/kleinen/development/rails/TutorialSampleApp32FromStart/app/views/layouts/_header.html.erb&amp;line=9'>app/views/layouts/_header.html.erb</a>
+          </td>
+          <td class='line'>9</td>
+          <td class='message'>
+            <a href='http://rails-bestpractices.com/posts/81-remove-tab' target='_blank'>remove tab, use spaces instead</a>
+          </td>
+        </tr>
+        <tr class="RemoveTabCheck">
+          <td class='filename'>
+              <a href='txmt://open/?url=file:///Users/kleinen/development/rails/TutorialSampleApp32FromStart/app/views/layouts/application.html.erb&amp;line=13'>app/views/layouts/application.html.erb</a>
+          </td>
+          <td class='line'>13</td>
+          <td class='message'>
+            <a href='http://rails-bestpractices.com/posts/81-remove-tab' target='_blank'>remove tab, use spaces instead</a>
+          </td>
+        </tr>
+        <tr class="RemoveTabCheck">
+          <td class='filename'>
+              <a href='txmt://open/?url=file:///Users/kleinen/development/rails/TutorialSampleApp32FromStart/app/views/microposts/_micropost.html.erb&amp;line=2'>app/views/microposts/_micropost.html.erb</a>
+          </td>
+          <td class='line'>2</td>
+          <td class='message'>
+            <a href='http://rails-bestpractices.com/posts/81-remove-tab' target='_blank'>remove tab, use spaces instead</a>
+          </td>
+        </tr>
+        <tr class="RemoveTabCheck">
+          <td class='filename'>
+              <a href='txmt://open/?url=file:///Users/kleinen/development/rails/TutorialSampleApp32FromStart/app/views/static_pages/_home_signed_in.html.erb&amp;line=13'>app/views/static_pages/_home_signed_in.html.erb</a>
+          </td>
+          <td class='line'>13</td>
+          <td class='message'>
+            <a href='http://rails-bestpractices.com/posts/81-remove-tab' target='_blank'>remove tab, use spaces instead</a>
+          </td>
+        </tr>
+        <tr class="RemoveTabCheck">
+          <td class='filename'>
+              <a href='txmt://open/?url=file:///Users/kleinen/development/rails/TutorialSampleApp32FromStart/app/views/users/edit.html.erb&amp;line=6'>app/views/users/edit.html.erb</a>
+          </td>
+          <td class='line'>6</td>
+          <td class='message'>
+            <a href='http://rails-bestpractices.com/posts/81-remove-tab' target='_blank'>remove tab, use spaces instead</a>
+          </td>
+        </tr>
+        <tr class="RemoveTabCheck">
+          <td class='filename'>
+              <a href='txmt://open/?url=file:///Users/kleinen/development/rails/TutorialSampleApp32FromStart/app/views/users/new.html.erb&amp;line=6'>app/views/users/new.html.erb</a>
+          </td>
+          <td class='line'>6</td>
+          <td class='message'>
+            <a href='http://rails-bestpractices.com/posts/81-remove-tab' target='_blank'>remove tab, use spaces instead</a>
+          </td>
+        </tr>
+        <tr class="RemoveTabCheck">
+          <td class='filename'>
+              <a href='txmt://open/?url=file:///Users/kleinen/development/rails/TutorialSampleApp32FromStart/app/views/users/show.html.erb&amp;line=13'>app/views/users/show.html.erb</a>
+          </td>
+          <td class='line'>13</td>
+          <td class='message'>
+            <a href='http://rails-bestpractices.com/posts/81-remove-tab' target='_blank'>remove tab, use spaces instead</a>
+          </td>
+        </tr>
+        <tr class="RemoveTrailingWhitespaceCheck">
+          <td class='filename'>
+              <a href='txmt://open/?url=file:///Users/kleinen/development/rails/TutorialSampleApp32FromStart/app/models/relationship.rb&amp;line=5'>app/models/relationship.rb</a>
+          </td>
+          <td class='line'>5</td>
+          <td class='message'>
+            <a href='http://rails-bestpractices.com/posts/60-remove-trailing-whitespace' target='_blank'>remove trailing whitespace</a>
+          </td>
+        </tr>
+        <tr class="RemoveTrailingWhitespaceCheck">
+          <td class='filename'>
+              <a href='txmt://open/?url=file:///Users/kleinen/development/rails/TutorialSampleApp32FromStart/app/models/user.rb&amp;line=4'>app/models/user.rb</a>
+          </td>
+          <td class='line'>4</td>
+          <td class='message'>
+            <a href='http://rails-bestpractices.com/posts/60-remove-trailing-whitespace' target='_blank'>remove trailing whitespace</a>
+          </td>
+        </tr>
+        <tr class="RemoveTrailingWhitespaceCheck">
+          <td class='filename'>
+              <a href='txmt://open/?url=file:///Users/kleinen/development/rails/TutorialSampleApp32FromStart/app/helpers/application_helper.rb&amp;line=3'>app/helpers/application_helper.rb</a>
+          </td>
+          <td class='line'>3</td>
+          <td class='message'>
+            <a href='http://rails-bestpractices.com/posts/60-remove-trailing-whitespace' target='_blank'>remove trailing whitespace</a>
+          </td>
+        </tr>
+        <tr class="RemoveTrailingWhitespaceCheck">
+          <td class='filename'>
+              <a href='txmt://open/?url=file:///Users/kleinen/development/rails/TutorialSampleApp32FromStart/app/helpers/microposts_helper.rb&amp;line=12'>app/helpers/microposts_helper.rb</a>
+          </td>
+          <td class='line'>12</td>
+          <td class='message'>
+            <a href='http://rails-bestpractices.com/posts/60-remove-trailing-whitespace' target='_blank'>remove trailing whitespace</a>
+          </td>
+        </tr>
+        <tr class="RemoveTrailingWhitespaceCheck">
+          <td class='filename'>
+              <a href='txmt://open/?url=file:///Users/kleinen/development/rails/TutorialSampleApp32FromStart/app/helpers/sessions_helper.rb&amp;line=26'>app/helpers/sessions_helper.rb</a>
+          </td>
+          <td class='line'>26</td>
+          <td class='message'>
+            <a href='http://rails-bestpractices.com/posts/60-remove-trailing-whitespace' target='_blank'>remove trailing whitespace</a>
+          </td>
+        </tr>
+        <tr class="RemoveTrailingWhitespaceCheck">
+          <td class='filename'>
+              <a href='txmt://open/?url=file:///Users/kleinen/development/rails/TutorialSampleApp32FromStart/app/controllers/sessions_controller.rb&amp;line=2'>app/controllers/sessions_controller.rb</a>
+          </td>
+          <td class='line'>2</td>
+          <td class='message'>
+            <a href='http://rails-bestpractices.com/posts/60-remove-trailing-whitespace' target='_blank'>remove trailing whitespace</a>
+          </td>
+        </tr>
+        <tr class="RemoveTrailingWhitespaceCheck">
+          <td class='filename'>
+              <a href='txmt://open/?url=file:///Users/kleinen/development/rails/TutorialSampleApp32FromStart/app/controllers/static_pages_controller.rb&amp;line=4'>app/controllers/static_pages_controller.rb</a>
+          </td>
+          <td class='line'>4</td>
+          <td class='message'>
+            <a href='http://rails-bestpractices.com/posts/60-remove-trailing-whitespace' target='_blank'>remove trailing whitespace</a>
+          </td>
+        </tr>
+        <tr class="RemoveTrailingWhitespaceCheck">
+          <td class='filename'>
+              <a href='txmt://open/?url=file:///Users/kleinen/development/rails/TutorialSampleApp32FromStart/app/controllers/users_controller.rb&amp;line=58'>app/controllers/users_controller.rb</a>
+          </td>
+          <td class='line'>58</td>
+          <td class='message'>
+            <a href='http://rails-bestpractices.com/posts/60-remove-trailing-whitespace' target='_blank'>remove trailing whitespace</a>
+          </td>
+        </tr>
+        <tr class="RemoveTrailingWhitespaceCheck">
+          <td class='filename'>
+              <a href='txmt://open/?url=file:///Users/kleinen/development/rails/TutorialSampleApp32FromStart/config/environments/test.rb&amp;line=43'>config/environments/test.rb</a>
+          </td>
+          <td class='line'>43</td>
+          <td class='message'>
+            <a href='http://rails-bestpractices.com/posts/60-remove-trailing-whitespace' target='_blank'>remove trailing whitespace</a>
+          </td>
+        </tr>
+        <tr class="RemoveTrailingWhitespaceCheck">
+          <td class='filename'>
+              <a href='txmt://open/?url=file:///Users/kleinen/development/rails/TutorialSampleApp32FromStart/config/routes.rb&amp;line=11'>config/routes.rb</a>
+          </td>
+          <td class='line'>11</td>
+          <td class='message'>
+            <a href='http://rails-bestpractices.com/posts/60-remove-trailing-whitespace' target='_blank'>remove trailing whitespace</a>
+          </td>
+        </tr>
+        <tr class="RemoveTrailingWhitespaceCheck">
+          <td class='filename'>
+              <a href='txmt://open/?url=file:///Users/kleinen/development/rails/TutorialSampleApp32FromStart/db/migrate/20120727111236_create_microposts.rb&amp;line=8'>db/migrate/20120727111236_create_microposts.rb</a>
+          </td>
+          <td class='line'>8</td>
+          <td class='message'>
+            <a href='http://rails-bestpractices.com/posts/60-remove-trailing-whitespace' target='_blank'>remove trailing whitespace</a>
+          </td>
+        </tr>
+        <tr class="RemoveTrailingWhitespaceCheck">
+          <td class='filename'>
+              <a href='txmt://open/?url=file:///Users/kleinen/development/rails/TutorialSampleApp32FromStart/lib/tasks/metrical_workaround.rb&amp;line=6'>lib/tasks/metrical_workaround.rb</a>
+          </td>
+          <td class='line'>6</td>
+          <td class='message'>
+            <a href='http://rails-bestpractices.com/posts/60-remove-trailing-whitespace' target='_blank'>remove trailing whitespace</a>
+          </td>
+        </tr>
+        <tr class="RemoveTrailingWhitespaceCheck">
+          <td class='filename'>
+              <a href='txmt://open/?url=file:///Users/kleinen/development/rails/TutorialSampleApp32FromStart/app/views/static_pages/_home_guest.html.erb&amp;line=10'>app/views/static_pages/_home_guest.html.erb</a>
+          </td>
+          <td class='line'>10</td>
+          <td class='message'>
+            <a href='http://rails-bestpractices.com/posts/60-remove-trailing-whitespace' target='_blank'>remove trailing whitespace</a>
+          </td>
+        </tr>
+        <tr class="RemoveTrailingWhitespaceCheck">
+          <td class='filename'>
+              <a href='txmt://open/?url=file:///Users/kleinen/development/rails/TutorialSampleApp32FromStart/app/views/static_pages/_home_signed_in.html.erb&amp;line=17'>app/views/static_pages/_home_signed_in.html.erb</a>
+          </td>
+          <td class='line'>17</td>
+          <td class='message'>
+            <a href='http://rails-bestpractices.com/posts/60-remove-trailing-whitespace' target='_blank'>remove trailing whitespace</a>
+          </td>
+        </tr>
+        <tr class="RemoveTrailingWhitespaceCheck">
+          <td class='filename'>
+              <a href='txmt://open/?url=file:///Users/kleinen/development/rails/TutorialSampleApp32FromStart/lib/tasks/cucumber.rake&amp;line=2'>lib/tasks/cucumber.rake</a>
+          </td>
+          <td class='line'>2</td>
+          <td class='message'>
+            <a href='http://rails-bestpractices.com/posts/60-remove-trailing-whitespace' target='_blank'>remove trailing whitespace</a>
+          </td>
+        </tr>
+        <tr class="RemoveTrailingWhitespaceCheck">
+          <td class='filename'>
+              <a href='txmt://open/?url=file:///Users/kleinen/development/rails/TutorialSampleApp32FromStart/lib/tasks/metrical_preparation.rake&amp;line=5'>lib/tasks/metrical_preparation.rake</a>
+          </td>
+          <td class='line'>5</td>
+          <td class='message'>
+            <a href='http://rails-bestpractices.com/posts/60-remove-trailing-whitespace' target='_blank'>remove trailing whitespace</a>
+          </td>
+        </tr>
+    </table>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+    <script type="text/javascript">
+      $(function() {
+        $('ul li').show();
+        $('input[type=checkbox]').prop('checked', true).click(function() {
+          if ($(this).attr('checked')) {
+            $(this).prop('checked', true);
+            $('.'+$(this).val()).show();
+          } else {
+            $(this).prop('checked', false);
+            $('.'+$(this).val()).hide();
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
