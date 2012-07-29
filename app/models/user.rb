@@ -31,7 +31,6 @@ class User < ActiveRecord::Base
 
   def follow!(other_user)
     followed_users << other_user
-    save!
     #relationships.create!(followed_id: other_user.id)
   end
 

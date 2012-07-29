@@ -31,7 +31,7 @@ describe User do
      it "should not allow access to adim" do
        expect {User.new(admin: true)}
          .to raise_error(ActiveModel::MassAssignmentSecurity::Error)
-     end    
+     end       
    end
   
   describe "with admin attribute set to 'true'" do
@@ -139,7 +139,7 @@ describe User do
   end
 
   describe "micropost associations" do
-
+    
     before { @user.save }
     let!(:older_micropost) do 
       FactoryGirl.create(:micropost, user: @user, created_at: 1.day.ago)
