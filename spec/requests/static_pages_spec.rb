@@ -48,6 +48,7 @@ describe "Static pages" do
          it { should have_link("0 following", href: following_user_path(user)) }
          it { should have_link("1 followers", href: followers_user_path(user)) }
        end
+       
       
       describe "with more than one micropost" do
         before do
