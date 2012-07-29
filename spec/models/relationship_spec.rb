@@ -4,7 +4,14 @@ describe Relationship do
 
   let(:follower) { FactoryGirl.create(:user) }
   let(:followed) { FactoryGirl.create(:user) }
-  let(:relationship) { follower.relationships.build(followed_id: followed.id) }
+  let(:relationship) do
+    r = Relationship.new()
+    r.followed = followed
+    r.follower = follower
+    r
+    #follower.followed_users << followed 
+    #follower.relationships.first
+  end
 
   subject { relationship }
 
@@ -17,7 +24,6 @@ describe Relationship do
       end.to raise_error(ActiveModel::MassAssignmentSecurity::Error)
     end    
     it "should not allow access to followed_id" do
-      pending
       expect do
         Relationship.new(followed_id: followed.id)
       end.to raise_error(ActiveModel::MassAssignmentSecurity::Error)
