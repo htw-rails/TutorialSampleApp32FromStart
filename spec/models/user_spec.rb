@@ -27,6 +27,7 @@ describe User do
   it { should respond_to(:followers) }
   it { should respond_to(:build_following_relationship)}
   it { should respond_to(:nick)}
+  it { should respond_to(:replies) }
   it { should be_valid }
   it { should_not be_admin }
   
@@ -250,6 +251,16 @@ describe User do
     subject { @relationship }
     its(:class) { should == Relationship }
     its(:followed) { should == followed_user }
-    
+  end
+  describe "handling replies" do
+    before(:each) do
+      @reply_to_user = FactoryGirl.create(:userToReplyTo)
+    end
+    it "should scope replies to self" do
+      @user.save
+      m = @user.microposts.create(content:"@donald to donald")
+      m.to.should == @reply_to_user
+      @reply_to_user.replies.should == [m]
+    end
   end
 end

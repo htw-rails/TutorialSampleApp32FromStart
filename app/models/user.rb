@@ -10,7 +10,7 @@ class User < ActiveRecord::Base
                                    dependent: :destroy
   has_many :followers, through: :reverse_relationships, 
                        source: :follower #this could have been ommitted
-   
+  has_many :replies, foreign_key: "to_id", class_name: "Micropost"
   before_save { self.email.downcase! }
   before_save :create_remember_token
   validates :name, presence: true, length: {maximum: 50}
@@ -22,7 +22,7 @@ class User < ActiveRecord::Base
   validates :nick, presence: true, uniqueness: { case_sensitive: false}
 
   def feed
-    Micropost.from_users_followed_by(self)
+     Micropost.from_users_followed_by_including_replies(self)
   end
   
   def handle

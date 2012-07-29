@@ -12,7 +12,6 @@ class SessionsController < ApplicationController
         flash.now[:error] = 'Invalid email/password combination' # Not quite right!
         render 'new'
       end
-   
   end
 
 
