@@ -199,8 +199,23 @@ describe User do
       subject { other_user }
       its(:followers) { should include(@user) }
     end
-    
-    
+    describe "destroy relationships" do
+      before {other_user.follow!(@user)}
+      it "should destroy associated relationships" do
+        relationships = @user.relationships
+        @user.destroy
+        relationships.each do | relationship |
+          Relationship.find_by_id(relationship.id).should be_nil
+        end
+      end
+      it "should destroy associated reversed_relationships" do
+        relationships = @user.reverse_relationships
+        @user.destroy
+        relationships.each do | relationship |
+          Relationship.find_by_id(relationship.id).should be_nil
+        end
+      end
+    end
   end
   describe "build_following_relationship" do
     let(:followed_user){FactoryGirl.create(:user)}
