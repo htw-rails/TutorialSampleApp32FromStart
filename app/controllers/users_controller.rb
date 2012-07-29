@@ -1,9 +1,23 @@
 class UsersController < ApplicationController
-  before_filter :signed_in_user, only: [:index, :edit, :update, :destroy]
+  before_filter :signed_in_user, only: [:index, :edit, :update, :destroy, :following, :followers]
   before_filter :correct_user,   only: [:edit, :update]
   before_filter :admin_user,     only: :destroy
   before_filter :not_current_user,     only: :destroy
   before_filter :guest_user,     only: [:new, :create]
+
+  def following
+     @title = "Following"
+     @user = User.find(params[:id])
+     @users = @user.following.paginate(page: params[:page])
+     render 'show_follow'
+   end
+
+   def followers
+     @title = "Followers"
+     @user = User.find(params[:id])
+     @users = @user.followers.paginate(page: params[:page])
+     render 'show_follow'
+   end
 
   def index
     @users = User.paginate(page: params[:page])
@@ -41,6 +55,9 @@ class UsersController < ApplicationController
     flash[:success] = "User destroyed."
     redirect_to users_path
   end
+  
+  
+  
 private
   def admin_user
     redirect_to(root_path) unless current_user.admin?
