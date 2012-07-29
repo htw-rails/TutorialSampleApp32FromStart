@@ -160,14 +160,25 @@ describe User do
       end
     end
     describe "status" do
-      let(:unfollowed_post) do
-        FactoryGirl.create(:micropost, user: FactoryGirl.create(:user))
-      end
+          let(:unfollowed_post) do
+            FactoryGirl.create(:micropost, user: FactoryGirl.create(:user))
+          end
+          let(:followed_user) { FactoryGirl.create(:user) }
 
-      its(:feed) { should include(newer_micropost) }
-      its(:feed) { should include(older_micropost) }
-      its(:feed) { should_not include(unfollowed_post) }
-    end
+          before do
+            @user.follow!(followed_user)
+            3.times { followed_user.microposts.create!(content: "Lorem ipsum") }
+          end
+
+          its(:feed) { should include(newer_micropost) }
+          its(:feed) { should include(older_micropost) }
+          its(:feed) { should_not include(unfollowed_post) }
+          its(:feed) do
+            followed_user.microposts.each do |micropost_from_followed_user|
+              should include(micropost_from_followed_user)
+            end
+          end
+        end
   end
   describe "following" do
     let(:other_user) { FactoryGirl.create(:user) }    
