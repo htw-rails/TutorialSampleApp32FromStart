@@ -20,7 +20,7 @@ describe "User pages" do
 
     it { should have_selector('h1',    text: user.name) }
     it { should have_selector('title', text: user.name) }
-
+    it { should have_selector('span',  text: user.handle)}
     describe "microposts" do
       it { should have_content(m1.content) }
       it { should have_content(m2.content) }
@@ -110,6 +110,7 @@ describe "User pages" do
        
        before do
          fill_in "Name",         with: "Example User"
+         fill_in "Nick",         with: "nick"
          fill_in "Email",        with: "user@example.com"
          fill_in "Password",     with: "foobar"
          fill_in I18n.t('activerecord.attributes.user.password_confirmation'), with: "foobar"

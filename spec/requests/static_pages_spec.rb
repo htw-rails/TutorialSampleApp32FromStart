@@ -38,6 +38,9 @@ describe "Static pages" do
         sign_in user
         visit root_path
       end
+      describe "it should show the nick/handle" do
+        it { should have_selector 'span', text: user.handle}
+      end
       describe "follower/following counts" do
          let(:other_user) { FactoryGirl.create(:user) }
          before do
@@ -64,6 +67,12 @@ describe "Static pages" do
         it "should show the number of microposts" do
           page.should have_selector 'span', text: '2 microposts'
         end
+        it "should show the nicks" do
+          user.feed.each do |item|
+            page.should have_selector("li##{item.id}", text: item.user.handle)
+          end
+        end
+        
        end
       describe "with no microposts" do
         it "should show the number of microposts" do
