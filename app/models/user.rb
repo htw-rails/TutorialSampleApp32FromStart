@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
  
   has_many :microposts, dependent: :destroy
   has_many :relationships, foreign_key: "follower_id", dependent: :destroy
-  has_many :followed_users, through: :relationships, source: :followed
+  has_many :following, through: :relationships, source: :followed
   has_many :reverse_relationships, foreign_key: "followed_id",
                                    class_name: "Relationship",
                                    dependent: :destroy
@@ -30,12 +30,12 @@ class User < ActiveRecord::Base
   end
 
   def follow!(other_user)
-    followed_users << other_user
+    following << other_user
     #relationships.create!(followed_id: other_user.id)
   end
 
   def unfollow!(other_user)
-    followed_users.delete(other_user)
+    following.delete(other_user)
     #relationships.find_by_followed_id(other_user.id).destroy
   end
 

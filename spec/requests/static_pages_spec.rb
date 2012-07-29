@@ -38,6 +38,17 @@ describe "Static pages" do
         sign_in user
         visit root_path
       end
+      describe "follower/following counts" do
+         let(:other_user) { FactoryGirl.create(:user) }
+         before do
+           other_user.follow!(user)
+           visit root_path
+         end
+
+         it { should have_link("0 following", href: following_user_path(user)) }
+         it { should have_link("1 followers", href: followers_user_path(user)) }
+       end
+      
       describe "with more than one micropost" do
         before do
           FactoryGirl.create(:micropost, user: user, content: "Lorem ipsum")
@@ -52,7 +63,7 @@ describe "Static pages" do
         it "should show the number of microposts" do
           page.should have_selector 'span', text: '2 microposts'
         end
-      end
+       end
       describe "with no microposts" do
         it "should show the number of microposts" do
           page.should have_selector 'span', text: '0 microposts'
