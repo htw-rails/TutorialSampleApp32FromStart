@@ -24,6 +24,7 @@ describe User do
   it { should respond_to(:unfollow!) }
   it { should respond_to(:reverse_relationships) }
   it { should respond_to(:followers) }
+  it { should respond_to(:build_following_relationship)}
   it { should be_valid }
   it { should_not be_admin }
   
@@ -188,6 +189,15 @@ describe User do
       its(:followers) { should include(@user) }
     end
     
+    
+  end
+  describe "build_following_relationship" do
+    let(:followed_user){FactoryGirl.create(:user)}
+    before { @relationship = 
+        @user.build_following_relationship(followed_user)}
+    subject { @relationship }
+    its(:class) { should == Relationship }
+    its(:followed) { should == followed_user }
     
   end
 end

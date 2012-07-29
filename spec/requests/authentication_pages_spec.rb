@@ -96,7 +96,6 @@ describe "Authentication" do
       end
       
       describe "in the Microposts controller" do
-
         describe "submitting to the create action" do
           before { post microposts_path }
           specify { response.should redirect_to(signin_path) }
@@ -107,6 +106,21 @@ describe "Authentication" do
           specify { response.should redirect_to(signin_path) }
         end
       end
+      
+      describe "in the Relationships controller" do
+        describe "submitting to the create action" do
+          before { post relationships_path }
+          specify { response.should redirect_to(signin_path) }
+        end
+
+        describe "submitting to the destroy action" do
+          # the hardcoded 1 works before the redirect should happen 
+          # before an object is tried to retrieve
+          before { delete relationship_path(1) }
+          specify { response.should redirect_to(signin_path) }          
+        end
+      end
+      
       
     end
     describe "as wrong user" do

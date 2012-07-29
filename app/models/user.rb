@@ -33,6 +33,12 @@ class User < ActiveRecord::Base
     following << other_user
     #relationships.create!(followed_id: other_user.id)
   end
+  
+  def build_following_relationship(user_to_follow)
+    r = relationships.build
+    r.followed = user_to_follow
+    r
+  end
 
   def unfollow!(other_user)
     following.delete(other_user)
