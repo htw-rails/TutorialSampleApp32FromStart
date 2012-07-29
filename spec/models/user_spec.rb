@@ -2,7 +2,8 @@ require 'spec_helper'
 
 describe User do
 
-  before { @user = User.new(name: "Example User", email: "user@example.com", 
+  before { @user = User.new(nick: "Bento",
+     name: "Example User", email: "user@example.com", 
                      password: "foobar", password_confirmation: "foobar") }
 
   subject { @user }
@@ -25,6 +26,7 @@ describe User do
   it { should respond_to(:reverse_relationships) }
   it { should respond_to(:followers) }
   it { should respond_to(:build_following_relationship)}
+  it { should respond_to(:nick)}
   it { should be_valid }
   it { should_not be_admin }
   
@@ -64,6 +66,29 @@ describe User do
       it { should_not be_valid }
     end
   end
+  describe 'when nick' do
+    describe "is not present" do
+      before {@user.nick = ""}
+      it {should_not be_valid}
+    end
+     describe "is already taken" do
+        before do
+          user_with_same_nick = @user.dup
+          user_with_same_nick.email = "otheremail@asdf.de"
+          user_with_same_nick.save
+        end
+        it { should_not be_valid }
+      end
+      describe "is already taken regardless of case" do
+        before do
+          user_with_same_nick = @user.dup
+          user_with_same_nick.email = "otheremail@asdf.de"
+          user_with_same_nick.nick = @user.nick.upcase
+          user_with_same_nick.save
+        end
+        it { should_not be_valid }
+      end
+  end
   describe 'when email' do
     describe "is not present" do
       before { @user.email = " " }
@@ -91,14 +116,15 @@ describe User do
     describe "address is already taken" do
       before do
         user_with_same_email = @user.dup
+        user_with_same_email.nick = "hans"
         user_with_same_email.save
       end
-
       it { should_not be_valid }
     end
     describe "address is already taken" do
       before do
         user_with_same_email = @user.dup
+        user_with_same_email.nick = "hans"
         user_with_same_email.email = @user.email.upcase
         user_with_same_email.save
       end

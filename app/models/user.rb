@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  attr_accessible :email, :name, :password, :password_confirmation
+  attr_accessible :nick, :email, :name, :password, :password_confirmation
   has_secure_password
  
   has_many :microposts, dependent: :destroy
@@ -19,6 +19,7 @@ class User < ActiveRecord::Base
                     uniqueness: { case_sensitive: false}
   validates :password, presence: true, length: { minimum: 6 } 
   validates :password_confirmation, presence: true
+  validates :nick, presence: true, uniqueness: { case_sensitive: false}
 
   def feed
     Micropost.from_users_followed_by(self)
