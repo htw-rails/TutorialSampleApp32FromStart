@@ -9,7 +9,7 @@ describe Relationship do
     r.followed = followed
     r.follower = follower
     r
-    #follower.followed_users << followed 
+    #follower.following << followed 
     #follower.relationships.first
   end
 

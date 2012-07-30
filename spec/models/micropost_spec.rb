@@ -44,7 +44,7 @@ describe Micropost do
    
    describe "replies" do
      before(:each) do
-       @reply_to_user = Factory(:userToReplyTo)
+       @reply_to_user = FactoryGirl.create(:userToReplyTo)
        @micropost = user.microposts.create(content: "#{@reply_to_user.handle} look a reply to Donald")
      end
      it "should identify a @user and set the in_reply_to field accordingly" do
