@@ -6,10 +6,10 @@ gem 'bcrypt-ruby'
 gem 'will_paginate'
 gem 'bootstrap-will_paginate'
 
+gem 'grit'
 
 group :development do
   gem 'growl'
-  gem 'grit'
 end
 group :development, :test do
   gem 'sqlite3'

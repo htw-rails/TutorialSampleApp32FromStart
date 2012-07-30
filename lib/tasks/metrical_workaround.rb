@@ -12,11 +12,10 @@
 #      rake metrical:revert[:verbose]
 # to see all lines with their replacements
 
-
-require 'grit'
-
 module MetricalWorkaround
-  
+  def init
+    require 'grit'
+  end
   def replace_hashes(verbose = false)
     if working_directory_clean?
       do_replace_hashes(verbose)
