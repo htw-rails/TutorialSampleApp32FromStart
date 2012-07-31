@@ -190,13 +190,21 @@ describe "User pages" do
 
      it { should have_selector('title', text: 'All users') }
      it { should have_selector('h1',    text: 'All users') }
-     describe "pagination" do
+     
+     
+    describe "pagination" do
        it "should list each user" do
           User.paginate(page: 1).each do |user|
             page.should have_selector('li', text: user.name)
           end
        end
+       it "should include the handle" do
+          User.paginate(page: 1).each do |user|
+            page.should have_link(user.handle, href: user_path(user))          
+          end
+       end
      end
+     
      describe "delete links" do
        it { should_not have_link('delete') }
 

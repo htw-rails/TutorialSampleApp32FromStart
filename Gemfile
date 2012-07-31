@@ -10,6 +10,8 @@ gem 'grit'
 
 group :development do
   gem 'growl'
+  gem 'grit'
+  gem 'wirble'
 end
 group :development, :test do
   gem 'sqlite3'
